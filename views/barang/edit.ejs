@@ -1,0 +1,22 @@
+<%- include('../partials/_head') %>
+        <div class="rows">
+            <div class="col">
+                <a href="/barang" class="btn btn-sm btn-danger mt-3 mb-3">Kembali</a>
+                <form action="/barang/update/<%= id %>" method="post" class="d-flex flex-column gap-4 col-5 mb-3">
+                    <input type="text" placeholder="nama" name="nama_barang" value="<%= nama_barang %>" required>
+                    <input type="text" placeholder="kode" name="kode_barang" value="<%= kode_barang %>" required>
+                    <input type="text" placeholder="merk" name="merk_spesifikasi_barang" value="<%= merk_spesifikasi_barang %>" required>
+                    <input type="text" placeholder="tahun" name="tahun_perolehan_barang" value="<%= tahun_perolehan_barang %>" required>
+                    <input type="text" placeholder="sumber" name="sumber_perolehan_barang" value="<%= sumber_perolehan_barang %>" required>
+                    <input type="text" placeholder="jumlah" name="jumlah_perolehan_barang" value="<%= jumlah_perolehan_barang %>" required>
+                    <input type="text" placeholder="kondisi" name="kondisi_perolehan_barang" value="<%= kondisi_perolehan_barang %>" required>
+                    <select name="id_penyimpanan">
+                        <% for( let i = 0; i < data.length; i++ ) { %>
+                            <option value="<%= data[i].id_penyimpanan %>"><%= data[i].nama_penyimpanan %></option>
+                        <% } %>
+                    </select>
+                    <button type="submit" class="btn btn-success btn-sm col-2">Submit</button>
+                </form>
+            </div>
+        </div>
+<%- include('../partials/_foot') %>

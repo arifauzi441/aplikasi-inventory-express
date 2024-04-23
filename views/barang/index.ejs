@@ -1,0 +1,41 @@
+<%- include('../partials/_head') %>
+        <div class="rows">
+            <div class="col">
+              <a href="/barang/create" class="btn-success btn btn-sm mt-3 mb-3">tambah</a>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">kode</th>
+                        <th scope="col">merk</th>
+                        <th scope="col">tahun</th>
+                        <th scope="col">sumber</th>
+                        <th scope="col">jumlah</th>
+                        <th scope="col">kondisi</th>
+                        <th scope="col">nama penyimpanan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let i = 0; i < data.length; i++ ) { %>
+                            <tr>
+                              <th scope="row"><%= (i+1) %></th>
+                              <td><%= data[i].nama_barang %></td>
+                              <td><%= data[i].kode_barang %></td>
+                              <td><%= data[i].merk_spesifikasi_barang %></td>
+                              <td><%= data[i].tahun_perolehan_barang %></td>
+                              <td><%= data[i].sumber_perolehan_barang %></td>
+                              <td><%= data[i].jumlah_perolehan_barang %></td>
+                              <td><%= data[i].kondisi_perolehan_barang %></td>
+                              <td><%= data[i].nama_penyimpanan %></td>
+                              <td>
+                                <a href="/barang/edit/<%= data[i].id_barang %>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/barang/delete/<%= data[i].id_barang %>" class="btn btn-danger btn-sm">Delete</a>
+                              </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+<%- include('../partials/_foot') %>

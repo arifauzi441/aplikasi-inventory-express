@@ -1,0 +1,13 @@
+<%- include('../partials/_head') %>
+        <div class="rows">
+            <div class="col">
+                <a href="/pegawai" class="btn btn-sm btn-danger mt-3 mb-3">Kembali</a>
+                <form action="/pegawai/update/<%= id %>" method="post" class="d-flex flex-column gap-4 col-5 mb-3">
+                    <input type="text" placeholder="nama" name="nama_pegawai" value="<%= nama %>" required>
+                    <input type="text" placeholder="nip" name="nip_pegawai" value="<%= nip %>" required>
+                    <input type="text" placeholder="jabatan" value="<%= jabatan %>" name="jabatan" required>
+                    <button type="submit" class="btn btn-success btn-sm col-2">Submit</button>
+                </form>
+            </div>
+        </div>
+<%- include('../partials/_foot') %>

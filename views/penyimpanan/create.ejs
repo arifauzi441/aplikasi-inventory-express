@@ -1,0 +1,17 @@
+<%- include('../partials/_head') %>
+        <div class="rows">
+            <div class="col">
+                <a href="/penyimpanan" class="btn btn-sm btn-danger mt-3">Kembali</a>
+                <form action="/penyimpanan/store" method="post" class="d-flex flex-column gap-4 col-5 mb-3 mt-3">
+                    <input type="text" placeholder="nama" name="nama_penyimpanan" required>
+                    <input type="text" placeholder="kode" name="kode_penyimpanan" required>
+                    <select name="id_ruangan" id="">
+                        <% for( let i = 0; i < data.length; i++ ) { %>
+                            <option value="<%= data[i].id_ruangan %>"><%= data[i].nama_ruangan %></option>
+                        <% } %>
+                    </select>
+                    <button type="submit" class="btn btn-success btn-sm col-2">Submit</button>
+                </form>
+            </div>
+        </div>
+<%- include('../partials/_foot') %>
